@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumera | Beauty Personal Care Discovery & Exploration</title>
+  <meta name="description"
+    content="Discover beauty and personal care content, creators, routines, and places with Lumera. A curated exploration platform.">
+  <meta name="theme-color" content="#F5F0E8">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://lumera.demo/#organization",
+        "name": "Lumera",
+        "url": "https://lumera.demo"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lumera.demo/#website",
+        "url": "https://lumera.demo",
+        "name": "Lumera",
+        "publisher": {
+          "@id": "https://lumera.demo/#organization"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Featured Collections",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Glass-Skin Basics"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Curl Care Essentials"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Wind-Down Wellness"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css?v=14">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">Lumera<span>.</span></a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-item active">Home</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#services" class="nav-item">Services</a>
+        <a href="#ritual-finder" class="nav-item">Ritual Finder</a>
+        <a href="#discover" class="nav-item">Discover</a>
+        <a href="#creators" class="nav-item">Creators</a>
+        <div class="dropdown">
+          <button class="nav-item dropdown-toggle" aria-expanded="false" aria-haspopup="true">Explore <i
+              class="ph ph-caret-down"></i></button>
+          <div class="dropdown-menu">
+            <a href="#map" class="dropdown-item">Map</a>
+            <a href="#collections" class="dropdown-item">Collections</a>
+            <a href="#routines" class="dropdown-item">Routine Guides</a>
+            <a href="#bookmarks" class="dropdown-item">Saved</a>
+            <a href="#faq" class="dropdown-item">FAQ</a>
+          </div>
+        </div>
+        <a href="#contact" class="nav-item nav-contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="desktop-bookmark-btn" class="bookmark-nav-btn desktop-only" aria-label="Bookmarks, 0 items"
+          onclick="document.getElementById('bookmarks').scrollIntoView({behavior: 'smooth'})">
+          <i class="ph ph-bookmark-simple"></i>
+          <span class="bookmark-count badge">0</span>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm desktop-only nav-cta">Contact</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- 1. HERO -->
+    <section id="home" class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <span class="eyebrow reveal"><span class="eyebrow-dot"></span> The considered beauty edit &mdash; Vol.
+            26</span>
+          <h1 id="hero-title" class="reveal delay-1">Beauty,<br><em>considered.</em></h1>
+          <p class="hero-desc reveal delay-2">Curated rituals, trusted creators and quiet spaces &mdash; gathered into
+            one serene place for your personal care journey.</p>
+          <div class="hero-actions reveal delay-3">
+            <a href="#discover" class="btn btn-primary btn-lg">Start discovering <i
+                class="ph ph-arrow-up-right"></i></a>
+            <a href="#ritual-finder" class="btn btn-ghost btn-lg"><i class="ph ph-sparkle"></i> Take the ritual quiz</a>
+          </div>
+          <dl class="hero-stats reveal delay-3">
+            <div>
+              <dt>Curated guides</dt>
+              <dd><span data-count="120">0</span>+</dd>
+            </div>
+            <div>
+              <dt>Expert creators</dt>
+              <dd><span data-count="48">0</span></dd>
+            </div>
+            <div>
+              <dt>Monthly saves</dt>
+              <dd><span data-count="32">0</span>k</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual reveal delay-2">
+          <div class="hero-arch">
+            <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=900"
+              alt="Soft light illuminating skincare products" class="hero-image">
+          </div>
+          <div class="hero-float hero-float-1 glass">
+            <span class="float-icon"><i class="ph-fill ph-drop"></i></span>
+            <div>
+              <strong>Glass Skin Guide</strong>
+              <small>1.2k saves this week</small>
+            </div>
+          </div>
+
+          <div class="hero-badge" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <path id="circlePath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" />
+              </defs>
+              <text>
+                <textPath href="#circlePath">CURATED &#183; CONSIDERED &#183; CALM &#183; </textPath>
+              </text>
+            </svg>
+            <i class="ph ph-sparkle"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Skin Barrier</span><i class="ph-fill ph-star-four"></i>
+        <span><em>Glass Skin</em></span><i class="ph-fill ph-star-four"></i>
+        <span>Curl Care</span><i class="ph-fill ph-star-four"></i>
+        <span><em>Wind-Down Rituals</em></span><i class="ph-fill ph-star-four"></i>
+        <span>Minimal Makeup</span><i class="ph-fill ph-star-four"></i>
+        <span><em>Holistic Wellness</em></span><i class="ph-fill ph-star-four"></i>
+        <span>Skin Barrier</span><i class="ph-fill ph-star-four"></i>
+        <span><em>Glass Skin</em></span><i class="ph-fill ph-star-four"></i>
+        <span>Curl Care</span><i class="ph-fill ph-star-four"></i>
+        <span><em>Wind-Down Rituals</em></span><i class="ph-fill ph-star-four"></i>
+        <span>Minimal Makeup</span><i class="ph-fill ph-star-four"></i>
+        <span><em>Holistic Wellness</em></span><i class="ph-fill ph-star-four"></i>
+      </div>
+    </div>
+
+    <!-- 2. ABOUT -->
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image reveal">
+            <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=800"
+              alt="Minimalist beauty elements arranged neatly" loading="lazy">
+            <div class="about-image-tag glass"><i class="ph ph-seal-check"></i> Editorially curated</div>
+          </div>
+          <div class="about-text reveal delay-1">
+            <span class="section-index">01 &mdash; Our Philosophy</span>
+            <h2 id="about-title">Less noise.<br><em>More ritual.</em></h2>
+            <p class="lead">Lumera is a serene space for self-care exploration &mdash; connecting you with premium,
+              diverse and genuinely useful beauty and wellness content.</p>
+            <p>We curate insights from trusted fictional creators so every piece of advice brings real value to your
+              routine. No endless feeds, no hype cycles &mdash; just thoughtful guidance.</p>
+            <p class="curate-note"><i class="ph ph-info"></i> <span><strong>How we curate:</strong> Creators are
+                selected for expertise, authenticity and a commitment to positive, inclusive beauty standards. All
+                content is informational, not medical or dermatological advice.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SERVICES -->
+    <section id="services" class="services-section" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-header split reveal">
+          <div>
+            <span class="section-index">02 &mdash; What you can do</span>
+            <h2 id="services-title">A suite for <em>discovery.</em></h2>
+          </div>
+          <p class="section-subtext">Four quietly powerful tools to help you find what works &mdash; and keep it close.
+          </p>
+        </div>
+        <div class="services-grid reveal">
+          <a href="#discover" class="service-card service-card-feature spotlight">
+            <span class="service-num">01</span>
+            <i class="ph ph-sparkle"></i>
+            <div>
+              <h3>Discover Content</h3>
+              <p>Filter through makeup, hair, body and wellness tutorials to find your perfect match.</p>
+            </div>
+            <span class="service-link">Explore <i class="ph ph-arrow-up-right"></i></span>
+          </a>
+          <a href="#creators" class="service-card spotlight">
+            <span class="service-num">02</span>
+            <i class="ph ph-users-three"></i>
+            <div>
+              <h3>Follow Creators</h3>
+              <p>Build a feed of expert voices you trust.</p>
+            </div>
+            <span class="service-link">Meet creators <i class="ph ph-arrow-up-right"></i></span>
+          </a>
+          <a href="#map" class="service-card spotlight">
+            <span class="service-num">03</span>
+            <i class="ph ph-map-pin-area"></i>
+            <div>
+              <h3>Find Places</h3>
+              <p>Salons, stores and pop-ups on an interactive map.</p>
+            </div>
+            <span class="service-link">View map <i class="ph ph-arrow-up-right"></i></span>
+          </a>
+          <a href="#routines" class="service-card service-card-wide spotlight">
+            <span class="service-num">04</span>
+            <i class="ph ph-list-checks"></i>
+            <div>
+              <h3>Follow Routines</h3>
+              <p>Step-by-step guides tailored to your skin, hair and wellness goals.</p>
+            </div>
+            <span class="service-link">See routines <i class="ph ph-arrow-up-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE: RITUAL FINDER -->
+    <section id="ritual-finder" class="finder-section" aria-labelledby="finder-title">
+      <div class="container">
+        <div class="finder-shell reveal">
+          <div class="finder-visual">
+            <div class="finder-orb" id="finder-orb" aria-hidden="true"></div>
+            <div class="finder-orb-ring" aria-hidden="true"></div>
+            <div class="finder-visual-copy">
+              <span class="section-index light">03 &mdash; Ritual Finder</span>
+              <h2 id="finder-title">Find your <em>ritual</em> in three taps.</h2>
+              <p>Tell us what you&rsquo;re focused on, how much time you have and how you want to feel. We&rsquo;ll
+                match you with a guide and a routine.</p>
+              <div class="finder-picks" id="finder-picks" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="finder-panel" id="finder-panel">
+            <div class="finder-progress" aria-hidden="true">
+              <span class="finder-progress-bar" id="finder-progress-bar"></span>
+            </div>
+            <div class="finder-step-label" id="finder-step-label">Step 1 of 3</div>
+
+            <div class="finder-step active" data-step="0">
+              <h3>What are you focusing on?</h3>
+              <div class="finder-options" role="group" aria-label="Focus area">
+                <button class="finder-option" data-key="focus" data-value="skin"><i
+                    class="ph ph-drop-half"></i><span>Skin</span><small>Hydration &amp; barrier</small></button>
+                <button class="finder-option" data-key="focus" data-value="hair"><i
+                    class="ph ph-wave-sine"></i><span>Hair</span><small>Curls &amp; moisture</small></button>
+                <button class="finder-option" data-key="focus" data-value="makeup"><i
+                    class="ph ph-paint-brush"></i><span>Makeup</span><small>Effortless looks</small></button>
+                <button class="finder-option" data-key="focus" data-value="wellness"><i
+                    class="ph ph-moon-stars"></i><span>Wellness</span><small>Body &amp; rest</small></button>
+              </div>
+            </div>
+
+            <div class="finder-step" data-step="1">
+              <h3>How much time do you have?</h3>
+              <div class="finder-options three" role="group" aria-label="Available time">
+                <button class="finder-option" data-key="time" data-value="quick"><i
+                    class="ph ph-lightning"></i><span>5&ndash;10 min</span><small>A quick refresh</small></button>
+                <button class="finder-option" data-key="time" data-value="mid"><i
+                    class="ph ph-timer"></i><span>15&ndash;20 min</span><small>A proper routine</small></button>
+                <button class="finder-option" data-key="time" data-value="slow"><i
+                    class="ph ph-hourglass-medium"></i><span>30 min +</span><small>A slow ritual</small></button>
+              </div>
+            </div>
+
+            <div class="finder-step" data-step="2">
+              <h3>How do you want to feel?</h3>
+              <div class="finder-options" role="group" aria-label="Desired outcome">
+                <button class="finder-option" data-key="mood" data-value="glow"><i
+                    class="ph ph-sun"></i><span>Radiant</span><small>Dewy &amp; luminous</small></button>
+                <button class="finder-option" data-key="mood" data-value="calm"><i
+                    class="ph ph-flower-lotus"></i><span>Calm</span><small>Soothed &amp; rested</small></button>
+                <button class="finder-option" data-key="mood" data-value="define"><i
+                    class="ph ph-shapes"></i><span>Defined</span><small>Polished &amp; shaped</small></button>
+                <button class="finder-option" data-key="mood" data-value="repair"><i
+                    class="ph ph-first-aid-kit"></i><span>Restored</span><small>Repaired &amp; strong</small></button>
+              </div>
+            </div>
+
+            <div class="finder-step finder-result" data-step="3" aria-live="polite">
+              <div id="finder-result-body"></div>
+            </div>
+
+            <div class="finder-nav">
+              <button class="finder-back" id="finder-back" disabled><i class="ph ph-arrow-left"></i> Back</button>
+              <button class="finder-restart hidden" id="finder-restart"><i class="ph ph-arrow-counter-clockwise"></i>
+                Start over</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. DISCOVER -->
+    <section id="discover" class="discover-section" aria-labelledby="discover-title">
+      <div class="container">
+        <div class="section-header split reveal">
+          <div>
+            <span class="section-index">04 &mdash; Discover</span>
+            <h2 id="discover-title">Inspiration, <em>edited.</em></h2>
+          </div>
+          <p class="section-subtext">Tutorials, reviews and routines &mdash; filtered to exactly what you need.</p>
+        </div>
+
+        <div class="filter-bar reveal">
+          <div class="filter-group category-filters" id="category-filters">
+            <button class="filter-chip active" data-cat="all">All</button>
+            <button class="filter-chip" data-cat="makeup">Makeup</button>
+            <button class="filter-chip" data-cat="hair">Hair</button>
+            <button class="filter-chip" data-cat="body">Body</button>
+            <button class="filter-chip" data-cat="wellness">Wellness</button>
+          </div>
+
+          <div class="filter-controls">
+            <div class="search-field">
+              <i class="ph ph-magnifying-glass"></i>
+              <input type="text" id="discover-search" placeholder="Search topics, creators..." class="search-input"
+                aria-label="Search content">
+            </div>
+
+            <select id="type-filter" class="select-input" aria-label="Filter by type">
+              <option value="">All Types</option>
+              <option value="video">Video</option>
+              <option value="tutorial">Tutorial</option>
+              <option value="review">Review</option>
+              <option value="routine">Routine</option>
+              <option value="article">Article</option>
+            </select>
+
+            <select id="sort-filter" class="select-input" aria-label="Sort content">
+              <option value="trending">Trending</option>
+              <option value="newest">Newest</option>
+              <option value="saved">Most Saved</option>
+            </select>
+
+            <button id="reset-filters" class="btn btn-icon" aria-label="Reset filters" title="Reset Filters"><i
+                class="ph ph-arrow-counter-clockwise"></i></button>
+          </div>
+        </div>
+
+        <div class="results-meta reveal">
+          <span id="results-count">Showing 0 items</span>
+        </div>
+
+        <div id="content-grid" class="content-grid reveal">
+          <!-- Content cards injected via JS -->
+        </div>
+
+        <div id="no-results-state" class="empty-state hidden">
+          <i class="ph ph-magnifying-glass"></i>
+          <h3>No matches found</h3>
+          <p>Try adjusting your filters or search terms.</p>
+          <button class="btn btn-secondary" onclick="document.getElementById('reset-filters').click()">Clear
+            Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CREATORS -->
+    <section id="creators" class="creators-section" aria-labelledby="creators-title">
+      <div class="container">
+        <div class="section-header split reveal">
+          <div>
+            <span class="section-index">05 &mdash; Creators</span>
+            <h2 id="creators-title">The voices <em>behind</em> the beauty.</h2>
+          </div>
+          <p class="section-subtext">Specialists we trust. Follow them and explore their latest work.</p>
+        </div>
+
+        <div id="creator-list" class="creator-list reveal">
+          <!-- Creator feeds injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. MAP -->
+    <section id="map" class="map-section" aria-labelledby="map-title">
+      <div class="container">
+        <div class="section-header split reveal">
+          <div>
+            <span class="section-index">06 &mdash; Venues</span>
+            <h2 id="map-title">Places worth <em>visiting.</em></h2>
+          </div>
+          <p class="section-subtext">Stores, salons and events near you. (Fictional demo map.)</p>
+        </div>
+
+        <div class="map-layout reveal">
+          <div class="map-sidebar">
+            <div class="map-filters">
+              <div class="map-search-wrapper search-field">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="text" id="map-search" class="search-input" placeholder="Search venues..."
+                  aria-label="Search venues">
+              </div>
+              <div class="filter-group map-type-filters">
+                <button class="filter-chip active" data-type="all">All</button>
+                <button class="filter-chip" data-type="store">Stores</button>
+                <button class="filter-chip" data-type="salon">Salons</button>
+                <button class="filter-chip" data-type="event">Events</button>
+              </div>
+              <p id="map-result-count" class="map-result-count">Showing 0 venues</p>
+            </div>
+
+            <div id="map-list" class="map-list">
+              <!-- Map items injected via JS -->
+            </div>
+
+            <div id="map-no-results" class="empty-state hidden">
+              <p>No venues found.</p>
+            </div>
+          </div>
+
+          <div class="map-canvas-container" aria-label="Interactive schematic map of venues">
+            <div class="demo-label">Demo map</div>
+            <!-- GOOGLE_MAPS_IFRAME
+            <iframe src="https://www.google.com/maps/embed?..." width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            -->
+            <div id="schematic-map" class="schematic-map">
+              <!-- SVG pins injected via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. COLLECTIONS -->
+    <section id="collections" class="collections-section" aria-labelledby="collections-title">
+      <div class="container">
+        <div class="section-header split reveal">
+          <div>
+            <span class="section-index">07 &mdash; Collections</span>
+            <h2 id="collections-title">Curated <em>edits</em> &amp; trending.</h2>
+          </div>
+          <p class="section-subtext">Hand-picked groups of our best content, plus what everyone&rsquo;s saving this
+            week.</p>
+        </div>
+
+        <div class="collections-layout reveal">
+          <div class="trending-panel">
+            <h3><i class="ph ph-trend-up"></i> Trending this week</h3>
+            <ol id="trending-list" class="trending-list">
+              <!-- Trending items injected via JS -->
+            </ol>
+          </div>
+          <div class="collections-grid" id="collections-grid">
+            <!-- Collection cards injected via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. ROUTINES -->
+    <section id="routines" class="routines-section" aria-labelledby="routines-title">
+      <div class="container">
+        <div class="section-header split reveal">
+          <div>
+            <span class="section-index">08 &mdash; Routine Guides</span>
+            <h2 id="routines-title">Step-by-step <em>rituals.</em></h2>
+          </div>
+          <p class="section-subtext">Expert-written and easy to follow. <span class="disclaimer">Informational only, not
+              medical advice. Patch test new products.</span></p>
+        </div>
+
+        <div class="routine-controls reveal">
+          <div class="routine-tabs" id="routine-tabs" role="tablist">
+            <!-- Tabs injected via JS -->
+          </div>
+          <div class="type-selector-wrapper">
+            <label for="skin-hair-type" class="sr-only">Skin or Hair Type</label>
+            <select id="skin-hair-type" class="select-input">
+              <option value="all">All Types</option>
+              <option value="dry">Dry</option>
+              <option value="oily">Oily</option>
+              <option value="sensitive">Sensitive</option>
+              <option value="curly">Curly</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="routine-content" class="routine-content reveal">
+          <!-- Routine details injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. BOOKMARKS -->
+    <section id="bookmarks" class="bookmarks-section" aria-labelledby="bookmarks-title">
+      <div class="container">
+        <div class="section-header split reveal">
+          <div>
+            <span class="section-index">09 &mdash; Saved</span>
+            <h2 id="bookmarks-title">Your <em>library.</em></h2>
+          </div>
+          <p class="section-subtext">Your saved inspiration, stored privately on this device.</p>
+        </div>
+
+        <div class="bookmarks-layout reveal">
+          <div class="bookmarks-header">
+            <div class="bookmark-tabs" id="bookmark-tabs" role="tablist">
+              <button class="tab-btn active" role="tab" aria-selected="true" data-target="bm-content">Content</button>
+              <button class="tab-btn" role="tab" aria-selected="false" data-target="bm-collections">Collections</button>
+              <button class="tab-btn" role="tab" aria-selected="false" data-target="bm-routines">Routines</button>
+              <button class="tab-btn" role="tab" aria-selected="false" data-target="bm-places">Places</button>
+            </div>
+            <button id="clear-bookmarks-btn" class="btn btn-outline btn-sm">Clear all</button>
+          </div>
+
+          <div id="bookmark-panels" class="bookmark-panels">
+            <!-- Panels injected via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. TESTIMONIALS -->
+    <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-index light">10 &mdash; Community</span>
+          <h2 id="testimonials-title">Words from our <em>community.</em></h2>
+          <p class="section-subtext">What our (fictional) demo readers are saying.</p>
+        </div>
+        <div class="testimonial-grid reveal">
+          <figure class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+            <p>&ldquo;Lumera has completely transformed how I approach my wind-down routine. The curated collections are
+              incredibly thoughtful.&rdquo;</p>
+            <figcaption class="author"><span class="author-avatar">MT<img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&amp;fit=crop&amp;crop=faces&amp;w=120&amp;h=120&amp;q=80" alt="" loading="lazy" onerror="this.remove()"></span><span>Maya T.<small>Fictional
+                  user</small></span></figcaption>
+          </figure>
+          <figure class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+            <p>&ldquo;Finally, a place where I can filter exactly what I need for my curly hair without the endless
+              scrolling and noise.&rdquo;</p>
+            <figcaption class="author"><span class="author-avatar">JR<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;crop=faces&amp;w=120&amp;h=120&amp;q=80" alt="" loading="lazy" onerror="this.remove()"></span><span>Julian R.<small>Fictional
+                  user</small></span></figcaption>
+          </figure>
+          <figure class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+            <p>&ldquo;The interactive map made it so easy to find the pop-up wellness events happening locally. A
+              beautifully designed platform.&rdquo;</p>
+            <figcaption class="author"><span class="author-avatar">ES<img src="https://images.unsplash.com/photo-1604072366595-e75dc92d6bdc?auto=format&amp;fit=crop&amp;crop=faces&amp;w=120&amp;h=120&amp;q=80" alt="" loading="lazy" onerror="this.remove()"></span><span>Elena S.<small>Fictional
+                  user</small></span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. FAQ -->
+    <section id="faq" class="faq-section" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <div class="section-header left reveal">
+          <span class="section-index">11 &mdash; FAQ</span>
+          <h2 id="faq-title">Questions, <em>answered.</em></h2>
+          <p class="section-subtext">Everything you need to know about Lumera. Still curious? <a href="#contact"
+              class="text-link">Get in touch</a>.</p>
+        </div>
+        <div class="accordion reveal" id="faq-accordion">
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-title">How do bookmarks work?</span>
+              <span class="accordion-icon"><i class="ph ph-plus"></i></span>
+            </button>
+            <div class="accordion-content">
+              <p>Bookmarks are saved securely on your current device using local storage. They do not sync across
+                devices as this platform does not require an account.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-title">How is sponsored content labeled?</span>
+              <span class="accordion-icon"><i class="ph ph-plus"></i></span>
+            </button>
+            <div class="accordion-content">
+              <p>Transparency is our priority. Any content that involves a brand partnership or compensation will always
+                carry a clear "Sponsored" badge prominently on its card and within the detailed view.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-title">How are creators chosen?</span>
+              <span class="accordion-icon"><i class="ph ph-plus"></i></span>
+            </button>
+            <div class="accordion-content">
+              <p>We hand-pick creators based on their expertise, authenticity, and commitment to positive beauty
+                standards. (Note: All creators on this site are fictional demos).</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-title">Are the venues on the map real?</span>
+              <span class="accordion-icon"><i class="ph ph-plus"></i></span>
+            </button>
+            <div class="accordion-content">
+              <p>No, the venues, stores, salons, and events shown on the interactive map are fictional placeholders for
+                demonstration purposes.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-title">Should I patch test products?</span>
+              <span class="accordion-icon"><i class="ph ph-plus"></i></span>
+            </button>
+            <div class="accordion-content">
+              <p>Yes. Content on Lumera is informational and not dermatological or medical advice. Always patch-test new
+                products on a small area of skin, and consult a professional for persistent skin or scalp concerns.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-title">How can I contact support or suggest a creator?</span>
+              <span class="accordion-icon"><i class="ph ph-plus"></i></span>
+            </button>
+            <div class="accordion-content">
+              <p>You can use the contact form in the section below to send us any suggestions, inquiries, or feedback!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. CONTACT / NEWSLETTER -->
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-header split reveal">
+          <div>
+            <span class="section-index">12 &mdash; Contact</span>
+            <h2 id="contact-title">Let&rsquo;s <em>talk.</em></h2>
+          </div>
+          <p class="section-subtext">Join the newsletter or drop us a line &mdash; we read every message.</p>
+        </div>
+        <div class="contact-grid reveal">
+          <div class="form-wrapper">
+            <h3>Send a message</h3>
+            <!-- Formspree / Netlify placeholder -->
+            <form id="contact-form" class="validate-form" novalidate action="#">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required>
+                  <span class="error-msg">Please enter your name.</span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                  <span class="error-msg">Please enter a valid email address.</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+                <span class="error-msg">Please enter a message.</span>
+              </div>
+              <button type="submit" class="btn btn-primary">Send message <i class="ph ph-paper-plane-tilt"></i></button>
+              <div class="form-success hidden"><i class="ph ph-check-circle"></i> Message sent successfully!</div>
+            </form>
+          </div>
+
+          <div class="form-wrapper newsletter-wrapper">
+            <i class="ph ph-envelope-open newsletter-icon"></i>
+            <h3>The Sunday <em>Edit</em></h3>
+            <p>Curated routines and creator highlights, delivered weekly. No noise, unsubscribe anytime.</p>
+            <!-- Mailchimp embed code comment placeholder -->
+            <!-- <div id="mc_embed_signup">...</div> -->
+            <form id="newsletter-form" class="validate-form" novalidate action="#">
+              <div class="form-group">
+                <label for="nl-email" class="sr-only">Email address</label>
+                <input type="email" id="nl-email" name="nl-email" placeholder="Your email address" required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <span class="error-msg">Please enter a valid email address.</span>
+              </div>
+              <button type="submit" class="btn btn-light">Subscribe</button>
+              <div class="form-success hidden"><i class="ph ph-check-circle"></i> Subscribed successfully!</div>
+            </form>
+          </div>
+        </div>
+
+        <div class="contact-map reveal">
+          <iframe title="Lumera studio location" src="https://maps.google.com/maps?q=SoHo%2C%20New%20York%2C%20NY&z=14&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <div class="contact-map-card glass">
+            <i class="ph ph-map-pin"></i>
+            <div>
+              <strong>Lumera Studio</strong>
+              <small>SoHo, New York &middot; By appointment</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cta">
+        <h2>Begin your <em>ritual.</em></h2>
+        <a href="#ritual-finder" class="btn btn-primary btn-lg">Take the quiz <i class="ph ph-arrow-up-right"></i></a>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo">Lumera<span>.</span></a>
+          <p>A serene space for self-care exploration.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <a href="#discover">Discover</a>
+          <a href="#ritual-finder">Ritual Finder</a>
+          <a href="#creators">Creators</a>
+          <a href="#map">Map</a>
+          <a href="#routines">Routines</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <a href="mailto:hello@lumera.example"><i class="ph ph-envelope-simple"></i> hello@lumera.example</a>
+          <a href="#" aria-label="Lumera on Instagram"><i class="ph ph-instagram-logo"></i> Instagram</a>
+          <a href="#" aria-label="Lumera on Pinterest"><i class="ph ph-pinterest-logo"></i> Pinterest</a>
+          <a href="#" aria-label="Lumera on YouTube"><i class="ph ph-youtube-logo"></i> YouTube</a>
+        </div>
+      </div>
+      <div class="footer-wordmark" aria-hidden="true">Lumera</div>
+      <div class="footer-bottom">
+        <p class="disclosure">Lumera is a demo brand. Creators, venues, and content are fictional placeholders. Content
+          is informational and not medical or dermatological advice. Sponsored content is labeled.</p>
+        <p class="copyright">&copy; 2026 Lumera Platform. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top" title="Back to top">
+    <i class="ph ph-arrow-up"></i>
+  </button>
+
+  <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Content Modal -->
+  <div id="content-modal" class="modal" aria-modal="true" role="dialog" aria-labelledby="modal-title" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal" data-close><i class="ph ph-x"></i></button>
+      <div class="modal-body">
+        <div class="modal-media">
+          <!-- VIDEO_EMBED -->
+          <!--
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/..." title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          -->
+          <div class="video-placeholder">
+            <img src="" alt="" id="modal-image" class="modal-cover">
+            <button class="play-btn" aria-label="Play video"><i class="ph-fill ph-play"></i></button>
+            <span class="video-label">Video embed placeholder</span>
+          </div>
+        </div>
+        <div class="modal-info">
+          <div class="modal-meta-top">
+            <span id="modal-type" class="badge"></span>
+            <span id="modal-sponsored" class="badge badge-sponsored hidden">Sponsored</span>
+          </div>
+          <h2 id="modal-title">Title</h2>
+          <p class="modal-creator">By <a href="#creators" id="modal-creator-link">Creator Name</a></p>
+          <div class="modal-desc" id="modal-desc">Description text...</div>
+
+          <div class="modal-products">
+            <h3>Products used</h3>
+            <ul id="modal-products-list"></ul>
+          </div>
+
+          <div class="modal-tags" id="modal-tags"></div>
+
+          <div class="modal-actions">
+            <button id="modal-bookmark-btn" class="btn btn-outline bookmark-toggle" aria-pressed="false">
+              <i class="ph ph-bookmark-simple"></i> <span class="btn-text">Save</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Collection Modal -->
+  <div id="collection-modal" class="modal" aria-modal="true" role="dialog" aria-labelledby="collection-modal-title"
+    hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content collection-modal-content">
+      <button class="modal-close" aria-label="Close modal" data-close><i class="ph ph-x"></i></button>
+      <div class="modal-header">
+        <h2 id="collection-modal-title">Collection Title</h2>
+        <p id="collection-modal-desc">Description</p>
+        <button id="col-modal-bookmark-btn" class="btn btn-outline btn-sm bookmark-toggle" aria-pressed="false">
+          <i class="ph ph-bookmark-simple"></i> <span class="btn-text">Save Collection</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="content-grid modal-grid" id="collection-modal-items"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GA_TAG -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script> -->
+
+  <script src="assets/js/data.js?v=3"></script>
+  <script src="assets/js/bookmarks.js"></script>
+  <script src="assets/js/main.js?v=2"></script>
+  <script src="assets/js/discover.js"></script>
+  <script src="assets/js/creators.js?v=2"></script>
+  <script src="assets/js/map.js"></script>
+  <script src="assets/js/collections.js"></script>
+  <script src="assets/js/routines.js"></script>
+  <script src="assets/js/ritual-finder.js"></script>
+</body>
+
+</html>
