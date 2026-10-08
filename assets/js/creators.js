@@ -61,14 +61,24 @@ function renderCreators() {
     const prevBtn = block.querySelector('.prev');
     const nextBtn = block.querySelector('.next');
     
-    prevBtn.addEventListener('click', () => feed.scrollBy({ left: -300, behavior: 'smooth' }));
-    nextBtn.addEventListener('click', () => feed.scrollBy({ left: 300, behavior: 'smooth' }));
-    
-    // Check scroll boundaries to disable/hide buttons (simplified)
-    feed.addEventListener('scroll', () => {
-      prevBtn.style.opacity = feed.scrollLeft <= 0 ? '0.3' : '1';
-      nextBtn.style.opacity = feed.scrollLeft >= (feed.scrollWidth - feed.clientWidth - 10) ? '0.3' : '1';
-    }, {passive: true});
+    // Scroll by one card (item width + gap) so arrows step cleanly on mobile/tablet
+    const step = () => {
+      const item = feed.querySelector('.feed-item');
+      return item ? item.offsetWidth + 16 : feed.clientWidth;
+    };
+    prevBtn.addEventListener('click', () => feed.scrollBy({ left: -step(), behavior: 'smooth' }));
+    nextBtn.addEventListener('click', () => feed.scrollBy({ left: step(), behavior: 'smooth' }));
+
+    // Disable arrows at the ends of the feed
+    const updateNav = () => {
+      const max = feed.scrollWidth - feed.clientWidth;
+      prevBtn.disabled = feed.scrollLeft <= 4;
+      nextBtn.disabled = feed.scrollLeft >= max - 4;
+    };
+    feed.addEventListener('scroll', updateNav, {passive: true});
+    window.addEventListener('resize', updateNav, {passive: true});
+    feed.querySelectorAll('img').forEach(img => img.addEventListener('load', updateNav, {once: true}));
+    requestAnimationFrame(updateNav);
     
     // Setup Follow button with LocalStorage
     const followBtn = block.querySelector('.follow-btn');
